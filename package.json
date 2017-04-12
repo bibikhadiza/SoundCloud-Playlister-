@@ -1,0 +1,24 @@
+{
+  "name": "soundcloud-playlist",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "es6-promise": "^4.1.0",
+    "isomorphic-fetch": "^2.2.1",
+    "node-soundcloud": "0.0.6",
+    "react": "^15.5.3",
+    "react-dom": "^15.5.3",
+    "soundcloud-searcher": "^0.3.1",
+    "superagent": "^3.5.2"
+  },
+  "devDependencies": {
+    "babel-preset-stage-1": "^6.24.1",
+    "react-scripts": "0.9.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
