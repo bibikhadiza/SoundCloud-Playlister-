@@ -3,13 +3,12 @@ import './App.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import Search from './utils/search/search'
+import Header from './utils/header/header'
 import SC from 'soundcloud';
 import SelectFieldExampleNullable from './utils/tabs/tab'
 require('isomorphic-fetch');
 require('es6-promise').polyfill();
-import SelectField from 'material-ui/SelectField'
-import MenuItem from 'material-ui/MenuItem'
+
 
 
 SC.initialize({ client_id: 'd6i0wruU7ddayTqrhwszluW0i9aNBlb1'
@@ -17,6 +16,7 @@ SC.initialize({ client_id: 'd6i0wruU7ddayTqrhwszluW0i9aNBlb1'
 
 
 class App extends Component {
+
   constructor(){
     super();
     this.state = {
@@ -39,27 +39,28 @@ class App extends Component {
   handleSubmit(event){
     event.preventDefault()
     SC.get('/tracks', {
-      q: this.state.value
+      q: this.state.value,
+      limit: 100
     }).then(function(tracks) {
       console.log(tracks);
     });
   }
 
-   componentDidMount(){
-     SC.get('/tracks', {
-       genre: this.state.genre
-     }).then(function(tracks) {
-       console.log(tracks);
-     });
-   }
-
+  componentDidMount(){
+    SC.get('/tracks', {
+      genres: this.state.genre,
+      limit: 50
+    }).then(function(tracks) {
+      console.log(tracks);
+    });
+  }
 
 
   render() {
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
         <div>
-        <Search handleSubmit={this.handleSubmit} handleChange={this.handleChange} value={this.state.value}/>
+        <Header handleSubmit={this.handleSubmit} handleChange={this.handleChange} value={this.state.value}/>
 
 
 
