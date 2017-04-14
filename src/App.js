@@ -39,7 +39,7 @@ class App extends Component {
     event.preventDefault()
     SC.get('/tracks', {
       q: this.state.value,
-      limit: 100
+      limit: 50
     }).then((tracks) => {
       this.setState({
         api_results: tracks
@@ -85,15 +85,15 @@ class App extends Component {
       player = null;
     }
 
-    return (
-      <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-        <div>
-        <Header handleSubmit={this.handleSubmit} handleChange={this.handleChange} value={this.state.value} onGenreChange={this.handleGenreChange}/>
-        <SearchResults results={this.state.api_results} changeTrack={this.changeTrack}/>
-          {player}
-      </div>
-      </MuiThemeProvider>
-    );
+  return (
+    <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+      <div>
+      <Header handleSubmit={this.handleSubmit} handleChange={this.handleChange} value={this.state.value} onGenreChange={this.handleGenreChange}/>
+      <SearchResults results={this.state.api_results} changeTrack={this.changeTrack}/>
+        {player}
+    </div>
+    </MuiThemeProvider>
+  );
   }
 }
 

@@ -8,14 +8,15 @@ const DropdownSelect = ({ results, changeGenre}) => {
 
   const optionItems = options.map((opt, i) => {
       return <option value={opt[0]} key={i}>{opt[1]}</option>
-  })
+  });
 
-  return(<div>
-        <select className="form-control" onChange={changeGenre}>
-          {optionItems}
-        </select>
-      </div>
-      )
+  return(
+    <div>
+      <select className="form-control" onChange={changeGenre}>
+        {optionItems}
+      </select>
+    </div>
+  )
 };
 
 export default DropdownSelect;

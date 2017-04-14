@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './header.css';
-import DropdownSelect from '../dropdown_select/dropdown_select'
+import DropdownSelect from '../dropdown_select/dropdown_select';
 
 class Header extends Component {
-  
+
   render() {
     return (
       <div className="header">
@@ -23,6 +23,6 @@ class Header extends Component {
     </div>
     );
   }
-}
+};
 
 export default Header;
