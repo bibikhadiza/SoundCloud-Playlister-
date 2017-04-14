@@ -6,7 +6,7 @@
     "es6-promise": "^4.1.0",
     "isomorphic-fetch": "^2.2.1",
     "node-soundcloud": "0.0.6",
-    "react": "^15.5.3",
+    "react": "^15.5.4",
     "react-dom": "^15.5.3",
     "react-icons": "^2.2.3",
     "soundcloud-searcher": "^0.3.1",

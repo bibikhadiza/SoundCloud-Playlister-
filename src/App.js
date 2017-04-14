@@ -6,9 +6,8 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Header from './utils/header/header'
 import SC from 'soundcloud';
 import SelectFieldExampleNullable from './utils/tabs/tab'
-require('isomorphic-fetch');
-require('es6-promise').polyfill();
-
+import SearchResults from "./utils/search/search"
+import SoundCloud from 'react-soundcloud-widget'
 
 
 SC.initialize({ client_id: 'd6i0wruU7ddayTqrhwszluW0i9aNBlb1'
@@ -21,9 +20,11 @@ class App extends Component {
     super();
     this.state = {
       value: "",
-      answer: [],
+      api_results: [],
+      genre: "disco",
+      url: '',
       list: "",
-      genre: "disco"
+      playlist: []
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -41,29 +42,35 @@ class App extends Component {
     SC.get('/tracks', {
       q: this.state.value,
       limit: 100
-    }).then(function(tracks) {
-      console.log(tracks);
-    });
+    }).then((tracks) => {
+      this.setState({
+        api_results: tracks
+      })
+    })
   }
 
-  componentDidMount(){
+  componentWillMount(){
     SC.get('/tracks', {
       genres: this.state.genre,
       limit: 50
-    }).then(function(tracks) {
-      console.log(tracks);
-    });
+    }).then((tracks) => {
+      this.setState({
+        api_results: tracks
+      })
+    }).then(()=>{
+
+    })
   }
 
 
   render() {
+    var track_url = 'https://api.soundcloud.com/tracks/253770481';
+
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
         <div>
         <Header handleSubmit={this.handleSubmit} handleChange={this.handleChange} value={this.state.value}/>
-
-
-
+        <SearchResults results={this.state.api_results}/>
       </div>
       </MuiThemeProvider>
     );
