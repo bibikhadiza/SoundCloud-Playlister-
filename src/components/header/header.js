@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import './header.css';
-import GoHome from 'react-icons/lib/go/home'
 import DropdownSelect from '../dropdown_select/dropdown_select'
 
 class Header extends Component {
-  constructor(){
-    super();
-  }
-
+  
   render() {
     return (
       <div className="header">

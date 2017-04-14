@@ -3,9 +3,9 @@ import './App.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import Header from './utils/header/header'
+import Header from './components/header/header'
 import SC from 'soundcloud';
-import SearchResults from "./utils/search/search"
+import SearchResults from "./components/searchResults/searchResults"
 import Player from 'react-soundcloud-player'
 SC.initialize({ client_id: 'd6i0wruU7ddayTqrhwszluW0i9aNBlb1'
 });
@@ -84,7 +84,7 @@ class App extends Component {
     } else {
       player = null;
     }
-    
+
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
         <div>
