@@ -13,7 +13,7 @@ A simple single page web application built using React.js and SoundCloud API
   • Single page web application \
   • Search for tracks and play them by clicking the play button on track card \
   • Option to search tracks by genre with dropdown select tag \
-  • Play music while searching for tracks \ 
+  • Play music while searching for tracks   
   • Username on track card links to user's profile page on SoundCloud \
   • Track title on track card links to track show page on SoundCloud 
 
