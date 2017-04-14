@@ -2,16 +2,16 @@
 A simple single page web application built using React.js and SoundCloud API
 
 ## Objective
-•Provide an interesting way to explore tracks via SoundCloud’s Search API 
-• Optional Ideas: a) Support viewing more tracks from a user who showed up in the results. b) View the users who favorited a track sorted by their numbers of followers. c) Integrate with giphy to find gifs to show instead of the track artwork
+•Provide an interesting way to explore tracks via SoundCloud’s Search API \
+• Optional Ideas: a) Support viewing more tracks from a user who showed up in the results. b) View the users who favorited a track sorted by their numbers of followers. c) Integrate with giphy to find gifs to show instead of the track artwork\
 • Have fun!
 
 ## Features
 
-• Single page web application
-2. Search for tracks and play them by clicking the play button on track card
-3. Option to search tracks by genre with dropdown select tag
-4. Play music while searching for tracks
+• Single page web application \
+• Search for tracks and play them by clicking the play button on track card \
+• Option to search tracks by genre with dropdown select tag \
+• Play music while searching for tracks 
 
 ## Getting Started
 
