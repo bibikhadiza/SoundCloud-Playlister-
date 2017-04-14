@@ -7,8 +7,10 @@
     "isomorphic-fetch": "^2.2.1",
     "node-soundcloud": "0.0.6",
     "react": "^15.5.4",
+    "react-audio-player": "^0.4.0",
     "react-dom": "^15.5.3",
     "react-icons": "^2.2.3",
+    "react-soundcloud-player": "^1.0.1",
     "soundcloud-searcher": "^0.3.1",
     "superagent": "^3.5.2"
   },

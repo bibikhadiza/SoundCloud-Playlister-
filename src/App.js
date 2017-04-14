@@ -5,11 +5,8 @@ import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Header from './utils/header/header'
 import SC from 'soundcloud';
-import SelectFieldExampleNullable from './utils/tabs/tab'
 import SearchResults from "./utils/search/search"
-import SoundCloud from 'react-soundcloud-widget'
-
-
+import Player from 'react-soundcloud-player'
 SC.initialize({ client_id: 'd6i0wruU7ddayTqrhwszluW0i9aNBlb1'
 });
 
@@ -22,13 +19,13 @@ class App extends Component {
       value: "",
       api_results: [],
       genre: "disco",
-      url: '',
-      list: "",
-      playlist: []
+      trackName: null,
+      trackId: null,
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleGenreChange = this.handleGenreChange.bind(this)
+    this.changeTrack = this.changeTrack.bind(this)
   }
 
 
@@ -72,15 +69,28 @@ class App extends Component {
     })
   }
 
+  changeTrack(event){
+    event.preventDefault()
+    this.setState({
+      trackId: event.target.id,
+      trackName: event.target.name
+    })
+  }
 
   render() {
-    var track_url = 'https://api.soundcloud.com/tracks/253770481';
-
+    let player = null;
+    if (this.state.trackId) {
+      player = <Player audio_id={this.state.trackId} title={this.state.trackName}/>;
+    } else {
+      player = null;
+    }
+    
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
         <div>
         <Header handleSubmit={this.handleSubmit} handleChange={this.handleChange} value={this.state.value} onGenreChange={this.handleGenreChange}/>
-        <SearchResults results={this.state.api_results}/>
+        <SearchResults results={this.state.api_results} changeTrack={this.changeTrack}/>
+          {player}
       </div>
       </MuiThemeProvider>
     );
