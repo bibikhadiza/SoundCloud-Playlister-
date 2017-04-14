@@ -44,6 +44,8 @@ Once you have installed all dependencies, run
   No Back End
 
 ## Future Intergrations 
+The initial goal of this challenge was to create a single page application for users to search for tracks and create party playlists. I built this application with the code challenge objectives in mind; create an simple, clean app that is easy to maintain and add new features to. For this reason I have choosen to create a dynamic, client side one page application consisting of four components. I have not utilized Redux and React Saga for this application in order to keep the applciation source code simple and maintainable. I am still working on implementing the party playlist feature along with creating more tests for the components. The following is a list of future additions:
+
   • Incorporate more tests for react components  
   • Allow user to sign in with their SoundCloud accounts \
   • Allow users to create playlists by clicking "Add to Playlist" button on track cards \
