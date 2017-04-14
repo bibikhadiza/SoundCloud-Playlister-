@@ -1,7 +1,7 @@
 import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
-import SearchResults from './src/searchResults/searchResults';
+import SearchResults from '../components/searchResults/searchResults';
 import sinon from 'sinon';
 
 describe(<SearchResults />, () => {

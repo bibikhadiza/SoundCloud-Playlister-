@@ -1,7 +1,7 @@
 import expect from 'expect'
 import React from 'react'
 import ReactDOM from 'react-dom';
-import {App} from '././App'
+import {App} from '../App'
 import { shallow, render, mount } from 'enzyme'
 
 describe(<App />, () => {
