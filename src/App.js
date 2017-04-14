@@ -28,6 +28,7 @@ class App extends Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleGenreChange = this.handleGenreChange.bind(this)
   }
 
 
@@ -49,6 +50,17 @@ class App extends Component {
     })
   }
 
+  handleGenreChange(event){
+    SC.get('/tracks', {
+      genres: event.target.value,
+      limit: 50
+    }).then((tracks) => {
+      this.setState({
+        api_results: tracks
+      })
+    })
+  }
+
   componentWillMount(){
     SC.get('/tracks', {
       genres: this.state.genre,
@@ -57,8 +69,6 @@ class App extends Component {
       this.setState({
         api_results: tracks
       })
-    }).then(()=>{
-
     })
   }
 
@@ -69,7 +79,7 @@ class App extends Component {
     return (
       <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
         <div>
-        <Header handleSubmit={this.handleSubmit} handleChange={this.handleChange} value={this.state.value}/>
+        <Header handleSubmit={this.handleSubmit} handleChange={this.handleChange} value={this.state.value} onGenreChange={this.handleGenreChange}/>
         <SearchResults results={this.state.api_results}/>
       </div>
       </MuiThemeProvider>
